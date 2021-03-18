@@ -13,7 +13,7 @@ module.exports = {
       "title": "DHI",
       logo: {
         alt: 'Restoring Personal Privacy & Competition',
-        "src": ""
+        "src": "img/favicon.png"
       },
       items: [
         {

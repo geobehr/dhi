@@ -10,16 +10,20 @@ const features = [
   {
     description: (
       <>
-      Transaction Management Services TMS brings thorough, reliable, and current access to the B2B transactions of global retail energy markets
+        Land and home ownership is a hallmark of any advanced civilization. The Digital Home Initiative establishes 'digital home ownership' by creating control, privacy and security conventions needed by individuals, families & communities to thrive in cyberspace, where they can gather freely without unwanted surveillance.
+
+        Like the US Bill of Rights, rights of people in their digital homes must be protected. Occupation and surveillance by unwanted parties - ad bots, IoT, smart speakers, etc. - should be known, and expelled if desired.
+
+        While not directly related to IoT, smart homes, smart speakers, etc, these devices contribute to the challenge by opening digital back doors into our lives.        ABC
       </>
     ),
-    imageUrl: `img/tms-logo.png`,
-    title: 'B2B Transactions for Retail Energy',
+    imageUrl: `img/dhi-logo.png`,
+    title: 'The Digital Home',
   },
   {
     description: (
       <>
-      Product-to-Cash P2C is a CIS & Billing solution tailored to the energy industry, with great extensibility
+        DEF
       </>
     ),
     imageUrl: `img/p2c-logo.png`,
@@ -28,7 +32,7 @@ const features = [
   {
     description: (
       <>
-      iSigma is a CIS & Billing Billing solution tailored to the energy industry, with great extensibility
+        iSigma is a CIS & Billing Billing solution tailored to the energy industry, with great extensibility
       </>
     ),
     imageUrl: `img/isigma-logo.png`,
@@ -37,7 +41,7 @@ const features = [
   {
     description: (
       <>
-      Wholesale Energy Solutions enables rapid entry to wholesale electric markets in the US & Japan
+        Wholesale Energy Solutions enables rapid entry to wholesale electric markets in the US & Japan
       </>
     ),
     imageUrl: `img/wes-logo.png`,
@@ -46,7 +50,7 @@ const features = [
   {
     description: (
       <>
-      Ascent quoting and channel management features are tailored to the unique needs of electric and gas energy markets
+        Ascent quoting and channel management features are tailored to the unique needs of electric and gas energy markets
       </>
     ),
     imageUrl: `img/ascent-logo.png`,
@@ -55,7 +59,7 @@ const features = [
   {
     description: (
       <>
-      The CentreStage data warehouse & data lake features enable centralized visibility and access, specializing in energy markets
+        The CentreStage data warehouse & data lake features enable centralized visibility and access, specializing in energy markets
       </>
     ),
     imageUrl: `img/centrestage-logo-tag.png`,
@@ -64,7 +68,7 @@ const features = [
   {
     description: (
       <>
-      The Latitude suite is a comprehensive set of products focused on pipelines and storage
+        The Latitude suite is a comprehensive set of products focused on pipelines and storage
       </>
     ),
     imageUrl: `img/latitude-logo2.png`,
@@ -72,7 +76,7 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--3', styles.feature)}>
@@ -89,7 +93,7 @@ function Feature({imageUrl, title, description}) {
 
 function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
   return (
     <Layout
       title={`${siteConfig.title}`}
