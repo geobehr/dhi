@@ -6,73 +6,93 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
+const characteristics = [
+  {
+    description: (
+      <>
+        Digital communities can carve out their space, know what they have, who has borrowed it, when it will be returned, how it's being used
+      </>
+    ),
+    imageUrl: `img/undraw_Security_on_ff2u.svg`,
+    title: 'Community Security & Privacy',
+  },
+  {
+    description: (
+      <>
+        Friends, lots of them, engaging in many different ways, on many different platforms. And knowing that good fences make good neighbors!
+      </>
+    ),
+    imageUrl: `img/undraw_agreement_aajr.svg`,
+    title: 'Communities of Trust',
+  },
+];
+
+const adoptionPaths = [
+  {
+    description: (
+      <>
+        Grass roots adoption of DHI by 2nd-tier social networks establishes an ecosystem of social networks that provide today's social media consumers with the promise privacy, portability and competition of DHI, while also positioning them to compete better against the giants. With moderate momentum the grass roots efforts could inspire the 800-pound social media giants to adopt the DHI frameworks.
+      </>
+    ),
+    imageUrl: `img/undraw_flowers_vx06.svg`,
+    title: 'Organic Adoption',
+  },
+  {
+    description: (
+      <>
+        Government agencies may force the 800-pound social media giants to adopt DHI frameworks, creating the ultimate ecosystem of social media and consumer privacy.
+      </>
+    ),
+    imageUrl: `img/undraw_judge_katerina_limpitsouni_ny1q.svg`,
+    title: 'Regulated Adoption',
+  },
+  {
+    description: (
+      <>
+        Modern digital communities 'vote with their feet', to upgrade! They break free from the restraints of silo-based social frameworks.
+      </>
+    ),
+    imageUrl: `img/undraw_adventure_4hum.svg`,
+    title: 'Community Portability',
+  },
+];
+
 const features = [
   {
     description: (
       <>
         Land and home ownership is a hallmark of any advanced civilization. The Digital Home Initiative establishes 'digital home ownership' by creating control, privacy and security conventions needed by individuals, families & communities to thrive in cyberspace, where they can gather freely without unwanted surveillance.
-
-        Like the US Bill of Rights, rights of people in their digital homes must be protected. Occupation and surveillance by unwanted parties - ad bots, IoT, smart speakers, etc. - should be known, and expelled if desired.
-
-        While not directly related to IoT, smart homes, smart speakers, etc, these devices contribute to the challenge by opening digital back doors into our lives.        ABC
       </>
     ),
-    imageUrl: `img/dhi-logo.png`,
+    imageUrl: `img/favicon.png`,
     title: 'The Digital Home',
   },
   {
     description: (
       <>
-        DEF
+        Physical communities take for granted the roads and services that connect us: road and car standards e.g. the stop sign; the USPS for seamless communication; POTS telephone service to talk to anybody, anywhere, anytime.
       </>
     ),
-    imageUrl: `img/p2c-logo.png`,
-    title: 'Energy CIS & Billing',
+    imageUrl: `img/undraw_town_r6pc.svg`,
+    title: 'Roads & Services for Digital Communities',
   },
   {
     description: (
       <>
-        iSigma is a CIS & Billing Billing solution tailored to the energy industry, with great extensibility
+        DHI helps establish digital communities that value security, privacy, and portability.
       </>
     ),
-    imageUrl: `img/isigma-logo.png`,
-    title: 'Energy CIS & Billing',
+    imageUrl: `img/undraw_urban_design_kpu8.svg`,
+    title: 'Architecture Changing the Digital Social Landscape',
   },
   {
     description: (
       <>
-        Wholesale Energy Solutions enables rapid entry to wholesale electric markets in the US & Japan
+        Today's tech standards like REST, JSON and others make it easy for social networks to connect, while maintaining their proprietary innovation that separates them from others.
       </>
     ),
-    imageUrl: `img/wes-logo.png`,
-    title: 'Wholesale solutions for Retail Energy',
-  },
-  {
-    description: (
-      <>
-        Ascent quoting and channel management features are tailored to the unique needs of electric and gas energy markets
-      </>
-    ),
-    imageUrl: `img/ascent-logo.png`,
-    title: 'Energy Sales & Channel Management',
-  },
-  {
-    description: (
-      <>
-        The CentreStage data warehouse & data lake features enable centralized visibility and access, specializing in energy markets
-      </>
-    ),
-    imageUrl: `img/centrestage-logo-tag.png`,
-    title: 'CentreStage Energy Data Warehouse & Data Lake',
-  },
-  {
-    description: (
-      <>
-        The Latitude suite is a comprehensive set of products focused on pipelines and storage
-      </>
-    ),
-    imageUrl: `img/latitude-logo2.png`,
-    title: 'Latitude Pipelines & Storage',
+    imageUrl: `img/undraw_server_status_5pbv.svg`,
+    title: 'Opinionated-Yet-Short Tech Stack prioritizes solutions over tech debate',
   },
 ];
 
@@ -83,6 +103,36 @@ function Feature({ imageUrl, title, description }) {
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
+        </div>
+      )}
+      <h3 className="text--center">{title}</h3>
+      <p className="text--center">{description}</p>
+    </div>
+  );
+}
+
+function AdoptionPath({ imageUrl, title, description }) {
+  const imgUrl = useBaseUrl(imageUrl);
+  return (
+    <div className={clsx('col col--6', styles.feature)}>
+      {imgUrl && (
+        <div className="text--center">
+          <img className={styles.featureImage} src={imgUrl} alt={title} />
+        </div>
+      )}
+      <h3 className="text--center">{title}</h3>
+      <p className="text--center">{description}</p>
+    </div>
+  );
+}
+
+function Characteristic({ imageUrl, title, description }) {
+  const imgUrl = useBaseUrl(imageUrl);
+  return (
+    <div className={clsx('col col--4', styles.characteristic)}>
+      {imgUrl && (
+        <div className="text--center">
+          <img className={styles.characteristicImage} src={imgUrl} alt={title} />
         </div>
       )}
       <h3 className="text--center">{title}</h3>
@@ -121,6 +171,28 @@ function Home() {
               <div className="row">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )},
+        {characteristics && characteristics.length > 0 && (
+          <section className={styles.features}>
+            <div className="container">
+              <div className="row">
+                {characteristics.map((props, idx) => (
+                  <Characteristic key={idx} {...props} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )},
+        {adoptionPaths && adoptionPaths.length > 0 && (
+          <section className={styles.features}>
+            <div className="container">
+              <div className="row">
+                {adoptionPaths.map((props, idx) => (
+                  <AdoptionPath key={idx} {...props} />
                 ))}
               </div>
             </div>
